@@ -1,0 +1,87 @@
+syntax = "proto3";
+
+package strobes.analyzer;
+
+import "google/protobuf/struct.proto";
+
+message ScanMeta {
+  int32 critical = 1;
+  int32 high = 2;
+  int32 medium = 3;
+  int32 low = 4;
+  int32 info = 5;
+  int32 total_bugs = 6;
+}
+
+message SAST {
+  string file_name = 1;
+  string vulnerable_code = 2;
+  string start_line_no = 3;
+  string end_line_no = 4;    
+}
+
+message DAST {
+  string affected_endpoint = 1;
+  bytes http_request = 2;
+  bytes http_response = 3;
+}
+
+message Network {
+  string ipaddress = 1;
+  string port = 2;
+  string hostname = 3;
+  string macaddress = 4;
+  string cpe = 5;
+}
+
+message Package {
+  repeated string affected_versions = 1;
+}
+
+message Container {
+  string fixed_version = 1;
+  string installed_version = 2;
+  string cpe = 3;
+}
+
+message AWS {
+  string arn = 1;
+  string partition = 2;
+  string resource_id = 3;
+  string type = 4;
+  string category = 5;
+  repeated string resources = 6;
+}
+
+message Cloud {
+  string region = 1;
+  AWS aws = 2;
+}
+
+message Bug {
+  string title = 1;
+  string description = 2;
+  int32 severity = 3;
+  float CVSS = 4;
+  string step_to_reproduce = 5;
+  string mitigation = 6;
+  repeated string CVE = 7;
+  repeated string CWE = 8;
+  repeated string references = 9;
+  SAST sast = 10;
+  DAST dast = 11;
+  Network network = 12;
+  Cloud cloud = 13;
+  Package package = 14;
+  Container container = 15;
+  map<string, string> scan_details = 16;
+  map<string, string> assets = 17;
+  repeated string tags = 18;
+  google.protobuf.Struct extra_info = 19;
+}
+
+message Result {
+    ScanMeta scan_meta = 1;
+    repeated Bug bugs_list = 2;
+    string scanner_raw = 3;
+}
