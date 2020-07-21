@@ -84,4 +84,9 @@ message Result {
     ScanMeta scan_meta = 1;
     repeated Bug bugs_list = 2;
     string scanner_raw = 3;
+    enum analyzer {
+      SPOTBUGS = 1;
+      PROWLER = 2;
+      ZAP = 2;
+    }
 }
