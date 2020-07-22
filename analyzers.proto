@@ -83,7 +83,6 @@ message Bug {
 message Result {
     ScanMeta scanMeta = 1;
     repeated Bug bugs_list = 2;
-    string scanner_raw = 3;
     enum Analyzer {
       SPOTBUGS = 0;
       PROWLER = 1;
