@@ -81,7 +81,7 @@ message Bug {
 }
 
 message Result {
-    ScanMeta scanMeta = 1;
+    ScanMeta scan_meta = 1;
     repeated Bug bugs_list = 2;
     enum Analyzer {
       SPOTBUGS = 0;
