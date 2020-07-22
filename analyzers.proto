@@ -81,7 +81,7 @@ message Bug {
 }
 
 message Result {
-    ScanMeta scan_meta = 1;
+    ScanMeta scanMeta = 1;
     repeated Bug bugs_list = 2;
     string scanner_raw = 3;
     enum Analyzer {

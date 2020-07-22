@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+package strobes.analyzer_service;
+
+import "analyzers.proto";
+
+
+message RunTaskRequest {
+   string analyzer = 1;
+   string vcs = 2;
+   map<string, string> vcs_data = 3;
+   map<string, string> scan_data = 4;
+   map<string, string> env_data = 5;
+}
+
+message RunTaskResponse {
+    string id = 1;
+    string error = 2;
+    string message = 3;
+}
+
+message TaskStatusRequest {
+    string id = 1;
+}
+
+message TaskStatusResponse {
+    string id = 1;
+    string error = 2;
+    string status = 3;
+}
+
+
+message StopTaskRequest {
+    string id = 1;
+}
+
+message StopTaskResponse {
+    string id = 1;
+    string error = 2;
+    string status = 3;
+}
+
+message GetResultsRequest {
+    string id = 1;
+}
+
+message GetResultsResponse {
+    strobes.analyzer.Result results = 1;
+}
+
+
+service RunnerService {
+    rpc RunTask (RunTaskRequest) returns (RunTaskResponse) {}
+    rpc TaskStatus (TaskStatusRequest) returns (TaskStatusResponse) {}
+    rpc StopTask (StopTaskRequest) returns (StopTaskResponse) {}
+    rpc GetResults (GetResultsRequest) returns (GetResultsResponse) {}
+}
