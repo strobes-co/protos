@@ -21,9 +21,11 @@ message SAST {
 }
 
 message DAST {
-  string affected_endpoint = 1;
-  bytes http_request = 2;
-  bytes http_response = 3;
+  repeated string uri = 1;
+  int32 port = 2;
+  string method = 3;
+  string param = 4;
+  string evidence = 5;
 }
 
 message Network {
