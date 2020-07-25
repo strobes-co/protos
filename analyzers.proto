@@ -41,9 +41,10 @@ message Package {
 }
 
 message Container {
-  string fixed_version = 1;
-  string installed_version = 2;
-  string cpe = 3;
+  string package_name = 1;
+  string fixed_version = 2;
+  string installed_version = 3;
+  string cpe = 4;
 }
 
 message AWS {
