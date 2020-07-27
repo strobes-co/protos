@@ -91,6 +91,13 @@ message Result {
       PROWLER = 1;
       ZAP = 2;
       TRIVY = 3;
+      ANCHORE = 4;
+      BANDIT = 5;
+      BRAKEMAN = 6
+      NODEJSCAN = 7;
+      PHPCS = 8;
+      ESLINT = 9;
+      SCODESCAN = 10;
     }
     Analyzer analyzer = 4;
 }
