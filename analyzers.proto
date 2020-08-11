@@ -129,6 +129,7 @@ message Result {
       PHPCS = 8;
       ESLINT = 9;
       SCODESCAN = 10;
+      GITLEAKS = 11;
     }
     Analyzer analyzer = 4;
 }
