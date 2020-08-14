@@ -130,6 +130,8 @@ message Result {
       ESLINT = 9;
       SCODESCAN = 10;
       GITLEAKS = 11;
+      CLOUDMAPPER = 12;
+      GOSEC = 13;
     }
     Analyzer analyzer = 4;
 }
