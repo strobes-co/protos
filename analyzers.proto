@@ -66,17 +66,16 @@ message AWS {
     KMS = 14;
     LAMBDA = 15;
     RDS = 16;
-    RDS = 17;
-    REDSHIT = 18;
-    S3 = 19;
-    SNS = 20;
-    SQS = 21;
-    GUARDDUTY = 22;
-    ROUTE53 = 23;
-    ECR = 24;
-    GLACIER = 25;
-    ACCESS_ANALYZER = 26;
-    OTHERS = 27;
+    REDSHIT = 17;
+    S3 = 18;
+    SNS = 19;
+    SQS = 20;
+    GUARDDUTY = 21;
+    ROUTE53 = 22;
+    ECR = 23;
+    GLACIER = 24;
+    ACCESS_ANALYZER = 25;
+    OTHERS = 26;
   }
   string arn = 1;
   string partition = 2;
