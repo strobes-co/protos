@@ -37,7 +37,9 @@ message Network {
 }
 
 message Package {
-  repeated string affected_versions = 1;
+  string name = 1;
+  string installed_version = 2;
+  string affected_versions = 3;
 }
 
 message Container {
@@ -133,6 +135,7 @@ message Result {
       CLOUDMAPPER = 12;
       GOSEC = 13;
       FLAWFINDER = 14;
+      DEPENDENCY = 15;
     }
     Analyzer analyzer = 4;
 }
