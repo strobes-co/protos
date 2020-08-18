@@ -132,6 +132,7 @@ message Result {
       GITLEAKS = 11;
       CLOUDMAPPER = 12;
       GOSEC = 13;
+      FLAWFINDER = 14;
     }
     Analyzer analyzer = 4;
 }
