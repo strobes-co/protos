@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package strobes.analyzer_service;
+package strobesbufs.analyzer_service;
 
 import "analyzers.proto";
 
@@ -45,7 +45,7 @@ message GetResultsRequest {
 }
 
 message GetResultsResponse {
-    strobes.analyzer.Result results = 1;
+    strobesbufs.analyzer.Result results = 1;
 }
 
 
