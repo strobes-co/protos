@@ -56,7 +56,7 @@ message AWS {
     CERTIFICATE_MANAGER = 2;
     CLOUDFORMATION = 3;
     CLOUDFRONT = 4;
-    CLOUDTRIAL = 5;
+    CLOUDTRAIL = 5;
     EC2 = 6;
     SECURITYGROUP = 7;
     VPC = 8;
@@ -68,7 +68,7 @@ message AWS {
     KMS = 14;
     LAMBDA = 15;
     RDS = 16;
-    REDSHIT = 17;
+    REDSHIFT = 17;
     S3 = 18;
     SNS = 19;
     SQS = 20;
