@@ -80,12 +80,10 @@ message AWS {
     OTHERS = 26;
   }
   string arn = 1;
-  string partition = 2;
-  string resource_id = 3;
-  Type type = 4;
-  string category = 5;
-  repeated string resources = 6;
-  string vulnerable_id = 7;
+  string resource_id = 2;
+  Type type = 3;
+  string category = 4;
+  string vulnerable_id = 5;
 }
 
 message Cloud {
