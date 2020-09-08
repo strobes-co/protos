@@ -2,10 +2,11 @@ syntax = "proto3";
 
 package strobesbufs.messier.analyzer;
 
-import "strobesbufs/messier/common.proto";
+import "messier/common.proto";
 
 
-message Bandit {
+message Wappalyzer {
     string target = 1;
     strobesbufs.messier.common.LogLevel log = 2;
+    bool probe = 3;
 }

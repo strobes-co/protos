@@ -2,10 +2,10 @@ syntax = "proto3";
 
 package strobesbufs.messier.function;
 
-import "strobesbufs/messier/functions/slack.proto";
-import "strobesbufs/messier/functions/git.proto";
-import "strobesbufs/messier/functions/svn.proto";
-import "strobesbufs/messier/functions/docker.proto";
+import "messier/functions/slack.proto";
+import "messier/functions/git.proto";
+import "messier/functions/svn.proto";
+import "messier/functions/docker.proto";
 
 message Function {
     oneof function {

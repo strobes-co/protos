@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package strobesbufs.analyzers.analyzer_service;
 
-import "strobesbufs/analyzers/analyzers.proto";
+import "analyzers/analyzers.proto";
 
 
 message RunTaskRequest {
