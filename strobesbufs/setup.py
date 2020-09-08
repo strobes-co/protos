@@ -3,7 +3,7 @@ from setuptools import find_packages, setup
 from __version__ import __version__
 
 
-with open("../../README.md") as file:
+with open("README.md") as file:
     setup(
         name="Strobesbufs",
         license="GPLv3",
