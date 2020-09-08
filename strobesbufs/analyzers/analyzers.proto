@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package strobesbufs.analyzer;
+package strobesbufs.analyzers.analyzer;
 
 import "google/protobuf/struct.proto";
 

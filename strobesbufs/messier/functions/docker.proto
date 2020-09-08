@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package strobesbufs.messier.function;
+
+message Docker {
+    string host = 1;
+    string username = 2;
+    string password = 3;
+    string image = 4;
+    string tag = 5;
+}

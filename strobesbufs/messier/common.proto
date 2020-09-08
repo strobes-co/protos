@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package strobesbufs.messier.common;
+
+
+enum Status {
+    PENDING = 0;
+    STARTED = 1;
+    SUCCESS = 2;
+    FAILURE = 3;
+    RETRY = 4;
+    REVOKED = 5;
+}
+
+enum LogLevel {
+    DEBUG = 0;
+    INFO = 1;
+    WARNING = 2;
+    ERROR = 3;
+    CRITICAL = 4;
+}

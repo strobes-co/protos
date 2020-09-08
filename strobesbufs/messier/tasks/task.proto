@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package strobesbufs.messier.task;
+
+import "google/protobuf/timestamp.proto";
+import "strobesbufs/messier/common.proto";
+import "strobesbufs/messier/functions/function.proto";
+import "strobesbufs/messier/analyzers/analyzer.proto";
+
+message Task {
+    string name = 1;
+    strobesbufs.messier.common.Status status = 2;
+    google.protobuf.Timestamp started = 3;
+    google.protobuf.Timestamp ended = 4;
+    oneof task_type {
+        strobesbufs.messier.analyzer.Analyzer analyzer = 5;
+        strobesbufs.messier.function.Function function = 6; 
+    }
+    string depends_on = 7;
+    bool parallel = 8;
+}

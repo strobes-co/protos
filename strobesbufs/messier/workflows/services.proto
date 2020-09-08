@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package strobesbufs.messier.workflow.services;
+
+import "google/protobuf/struct.proto";
+import "strobesbufs/messier/workflows/workflow.proto";
+
+message WorkflowValidateRequest {
+    string yaml = 1;
+}
+
+message WorkflowValidateResponse {
+    bool success = 1;
+    google.protobuf.Struct errors = 2;
+    strobesbufs.messier.workflow.Workflow workflow = 3;
+}
+
+message WorkflowExecuteRequest {
+    strobesbufs.messier.workflow.Workflow workflow = 1;
+}
+
+message WorkflowExecuteResponse {
+    bool success = 1;
+    google.protobuf.Struct errors = 2;
+}
+
+message GetResultsRequest {
+    string id = 1;
+    enum Type{
+        WORKFLOW = 0;
+        ANALYZER = 1;
+    }
+    Type type = 2;
+}
+
+message GetResultsResponse {
+    google.protobuf.Struct results = 1;
+}
+
+
+service WorkflowService {
+    rpc WorkflowValidate (WorkflowValidateRequest) returns (WorkflowValidateResponse) {}
+    rpc WorkflowExecute (WorkflowExecuteRequest) returns (WorkflowExecuteResponse) {}
+    rpc GetResults (GetResultsRequest) returns (GetResultsResponse) {}
+}

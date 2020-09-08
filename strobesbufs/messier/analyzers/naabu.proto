@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package strobesbufs.messier.analyzer;
+
+import "strobesbufs/messier/common.proto";
+
+
+message Naabu {
+    string target = 1;
+    strobesbufs.messier.common.LogLevel log = 2;
+}

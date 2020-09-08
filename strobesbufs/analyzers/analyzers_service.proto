@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package strobesbufs.analyzer_service;
+package strobesbufs.analyzers.analyzer_service;
 
-import "analyzers.proto";
+import "strobesbufs/analyzers/analyzers.proto";
 
 
 message RunTaskRequest {
@@ -45,7 +45,7 @@ message GetResultsRequest {
 }
 
 message GetResultsResponse {
-    strobesbufs.analyzer.Result results = 1;
+    strobesbufs.analyzers.analyzer.Result results = 1;
 }
 
 
