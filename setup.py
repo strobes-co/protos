@@ -1,6 +1,6 @@
 """ __Doc__ File handle class """
 from setuptools import find_packages, setup
-from __version__ import __version__
+from strobesbufs.__version__ import __version__
 
 
 with open("README.md") as file:

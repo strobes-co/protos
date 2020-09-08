@@ -28,10 +28,9 @@ python3 -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. ./strobesbuf
 
 
 # Creating a new package
-cd ./strobesbufs
-rm -rf dist
-echo "__version__ = \"$1\"" > ./__version__.py
+rm -rf ./dist
+echo "__version__ = \"$1\"" > ./strobesbufs/__version__.py
 python3 -m pip install --user --upgrade setuptools wheel
 python3 setup.py sdist bdist_wheel
-rm -rf build
+rm -rf ./build ./strobesbufs/__pycache__
 echo "Package building completed, you can get the wheel or source in ./strobesbufs/dist directory!"

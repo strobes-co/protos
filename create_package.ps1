@@ -34,12 +34,11 @@ python3 -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. .\strobesbuf
 
 
 # Creating a new package
-Set-Location .\strobesbufs
 Remove-Item .\dist -Recurse
 $line = "__version__ = '$version'"
-$line | Out-File -Encoding "UTF8" .\__version__.py
+$line | Out-File -Encoding "UTF8" .\strobesbufs\__version__.py
 python3 -m pip install --user --upgrade setuptools wheel
 python3 setup.py sdist bdist_wheel
 Remove-Item .\build -Recurse
-Remove-Item .\__pycache__ -Recurse
+Remove-Item .\strobesbufs\__pycache__ -Recurse
 Write-Host "Package building completed, you can get the wheel or source in .\strobesbufs\dist directory!"
