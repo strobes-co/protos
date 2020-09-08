@@ -2,10 +2,10 @@ syntax = "proto3";
 
 package strobesbufs.messier.analyzer;
 
-import "messier/common.proto";
+import "strobesbufs/messier/common.proto";
 
 
-message Bandit {
+message Naabu {
     string target = 1;
     strobesbufs.messier.common.LogLevel log = 2;
 }

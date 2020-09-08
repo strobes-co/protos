@@ -3,8 +3,8 @@ syntax = "proto3";
 package strobesbufs.messier.workflow;
 
 import "google/protobuf/timestamp.proto";
-import "messier/tasks/task.proto";
-import "messier/common.proto";
+import "strobesbufs/messier/tasks/task.proto";
+import "strobesbufs/messier/common.proto";
 
 message Workflow {
     string name = 1;

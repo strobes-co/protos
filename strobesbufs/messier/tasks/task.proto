@@ -3,9 +3,9 @@ syntax = "proto3";
 package strobesbufs.messier.task;
 
 import "google/protobuf/timestamp.proto";
-import "messier/common.proto";
-import "messier/functions/function.proto";
-import "messier/analyzers/analyzer.proto";
+import "strobesbufs/messier/common.proto";
+import "strobesbufs/messier/functions/function.proto";
+import "strobesbufs/messier/analyzers/analyzer.proto";
 
 message Task {
     string name = 1;

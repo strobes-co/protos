@@ -2,10 +2,11 @@ syntax = "proto3";
 
 package strobesbufs.messier.analyzer;
 
-import "messier/common.proto";
+import "strobesbufs/messier/common.proto";
 
 
-message Naabu {
+message Subfinder {
     string target = 1;
     strobesbufs.messier.common.LogLevel log = 2;
+    bool all = 3;
 }

@@ -3,7 +3,7 @@ syntax = "proto3";
 package strobesbufs.messier.workflow.services;
 
 import "google/protobuf/struct.proto";
-import "messier/workflows/workflow.proto";
+import "strobesbufs/messier/workflows/workflow.proto";
 
 message WorkflowValidateRequest {
     string yaml = 1;
