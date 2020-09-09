@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+import "google/protobuf/struct.proto";
+
+
+service Canis {
+   rpc RunCanis(Input) returns (Results) {}
+}
+
+
+message Input {
+  google.protobuf.Struct new_bugs = 1;
+  google.protobuf.Struct old_bugs  = 2;
+  string features = 3;
+  float threshold = 4;
+}
+
+
+message Results {
+  google.protobuf.Struct results = 1;
+}
+
