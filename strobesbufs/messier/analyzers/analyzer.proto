@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package strobesbufs.messier.analyzer;
 
-import "strobebufs/messier/analyzers/bandit.proto";
+import "strobesbufs/messier/analyzers/bandit.proto";
 import "strobesbufs/messier/analyzers/subfinder.proto";
 import "strobesbufs/messier/analyzers/naabu.proto";
 import "strobesbufs/messier/analyzers/wappalyzer.proto";
