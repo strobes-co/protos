@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package strobesbufs.scrappers.php_security;
+
+
+message Branch {
+  string name = 1;
+  string published_date = 2;
+  repeated string affected_versions = 3;
+}
+
+message PhpSecurity {
+  string source = 1;
+  string title = 2;
+  string cve = 3;
+  repeated string references = 4;
+  repeated Branch branches = 5;
+}
+
+
+message Result {
+  repeated PhpSecurity php_security = 1;
+}
+
+

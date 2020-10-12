@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package strobesbufs.scrappers.photon;
+
+message Photon {
+  string source = 1;
+  string cve = 2;
+  string affected_package = 3;
+  string affected_versions = 4;
+  string resolved_version = 5;
+  float cvss = 6;
+  string last_modified = 7;
+}
+
+
+message Result {
+    repeated Photon photon = 1;
+}

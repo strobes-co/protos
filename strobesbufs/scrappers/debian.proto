@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package strobesbufs.scrappers.debian;
+
+import "google/protobuf/struct.proto";
+
+
+message Releases{
+    google.protobuf.Struct repositories = 1;
+    string urgency = 2;
+}
+
+message Debian {
+  string source = 1;
+  string description = 2;
+  string scope = 3;
+  string cve = 4;
+  repeated Releases releases = 5;
+}
+
+
+message Result {
+    repeated Debian debian = 1;
+}

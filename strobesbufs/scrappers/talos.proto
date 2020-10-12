@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package strobesbufs.scrappers.talos;
+
+
+message Talos {
+  string title = 1;
+  repeated string references = 2;
+  string cve = 3;
+  string date = 4;
+  string source = 5;
+  float cvss = 6;
+  string summary = 7;
+  string description = 8;
+  repeated string timeline = 9;
+}
+
+message Result {
+    repeated Talos talos = 1;
+}

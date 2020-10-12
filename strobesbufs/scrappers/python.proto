@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package strobesbufs.scrappers.python;
+
+
+message Python {
+  string source = 1;
+  string cve = 2;
+  string id = 3;
+  string description = 4;
+  string affected_package = 5;
+  string affected_versions = 6;
+  string last_modified = 7;
+}
+
+message Result {
+    repeated Python python = 1;
+}

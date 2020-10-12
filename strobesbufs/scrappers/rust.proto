@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package strobesbufs.scrappers.rust;
+
+
+message Rust {
+  string source = 1;
+  string cve = 2;
+  string id = 3;
+  string title = 4;
+  string description = 5;
+  string affected_package = 6;
+  string published_date = 7;
+  repeated string patched_versions = 8;
+  repeated string tags = 9;
+  repeated string references = 10;
+}
+
+message Result {
+    repeated Rust rust = 1;
+}
