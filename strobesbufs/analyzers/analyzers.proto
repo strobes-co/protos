@@ -26,7 +26,11 @@ message DAST {
   string method = 3;
   string param = 4;
   string evidence = 5;
+  string request_headers = 6;
+  string response_headers = 7;
+
 }
+
 
 message Network {
   string ipaddress = 1;
@@ -46,7 +50,7 @@ message Container {
   string package_name = 1;
   string fixed_version = 2;
   string installed_version = 3;
-  string cpe = 4;
+  repeated string cpe = 4;
 }
 
 message AWS {
@@ -89,13 +93,13 @@ message Cloud {
   string region = 1;
   AWS aws = 2;
 }
-
+ 
 message Bug {
   string title = 1;
   string description = 2;
   int32 severity = 3;
   float CVSS = 4;
-  string step_to_reproduce = 5;
+  string step_to_reproduce = 5; 
   string mitigation = 6;
   repeated string CVE = 7;
   repeated string CWE = 8;
@@ -110,28 +114,54 @@ message Bug {
   map<string, string> assets = 17;
   repeated string tags = 18;
   google.protobuf.Struct extra_info = 19;
+  string vulnerable_since = 20;
+}
+
+
+message Asset {
+
+  string name = 1;
+  string ipaddress = 2;
+  string os = 3;
+  string mac_address = 4;
+  string hostname = 5;
+  string netbios = 6;
+  repeated string cpe = 7;
+  repeated string tags = 8;
+  string risk_score = 9;
+
 }
 
 message Result {
     ScanMeta scan_meta = 1;
     repeated Bug bugs_list = 2;
+    repeated Asset assest_list = 3;
     enum Analyzer {
-      SPOTBUGS = 0;
-      PROWLER = 1;
-      ZAP = 2;
-      TRIVY = 3;
-      ANCHORE = 4;
-      BANDIT = 5;
-      BRAKEMAN = 6;
-      NODEJSCAN = 7;
-      PHPCS = 8;
-      ESLINT = 9;
-      SCODESCAN = 10;
-      GITLEAKS = 11;
-      CLOUDMAPPER = 12;
-      GOSEC = 13;
-      FLAWFINDER = 14;
-      DEPENDENCY = 15;
+      NONE = 0;
+      SPOTBUGS = 1;
+      PROWLER = 2;
+      ZAP = 3;
+      TRIVY = 4;
+      ANCHORE = 5;
+      BANDIT = 6;
+      BRAKEMAN = 7;
+      NODEJSCAN = 8;
+      PHPCS = 9;
+      ESLINT = 10;
+      SCODESCAN = 11;
+      GITLEAKS = 12;
+      CLOUDMAPPER = 13;
+      GOSEC = 14;
+      FLAWFINDER = 15;
+      DEPENDENCY = 16;
     }
     Analyzer analyzer = 4;
+    Parser parser = 5;
+    enum Parser {
+      NONE = 0;
+      BURP = 1;
+      QUALYS = 2;
+      NESSUS = 3;
+      NEXPOSE = 4;
+    } 
 }

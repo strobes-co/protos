@@ -7,10 +7,13 @@ import "strobesbufs/analyzers/analyzers.proto";
 
 message RunTaskRequest {
    string analyzer = 1;
-   string vcs = 2;
-   map<string, string> vcs_data = 3;
-   map<string, string> scan_data = 4;
-   map<string, string> env_data = 5;
+   string parser = 2;
+   string vcs = 3;
+   map<string, string> vcs_data = 4;
+   map<string, string> scan_data = 5;
+   map<string, string> env_data = 6;
+   string filename = 7;
+
 }
 
 message RunTaskResponse {
