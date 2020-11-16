@@ -156,7 +156,6 @@ message Result {
       DEPENDENCY = 16;
     }
     Analyzer analyzer = 4;
-    Parser parser = 5;
     enum Parser {
       NONE = 0;
       BURP = 1;
@@ -164,4 +163,5 @@ message Result {
       NESSUS = 3;
       NEXPOSE = 4;
     } 
+    Parser parser = 5;
 }
