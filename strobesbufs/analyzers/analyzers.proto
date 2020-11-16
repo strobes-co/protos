@@ -137,7 +137,7 @@ message Result {
     repeated Bug bugs_list = 2;
     repeated Asset assest_list = 3;
     enum Analyzer {
-      NONE = 0;
+      NOANALYZER = 0;
       SPOTBUGS = 1;
       PROWLER = 2;
       ZAP = 3;
@@ -157,7 +157,7 @@ message Result {
     }
     Analyzer analyzer = 4;
     enum Parser {
-      NONE = 0;
+      NOPARSER = 0;
       BURP = 1;
       QUALYS = 2;
       NESSUS = 3;
