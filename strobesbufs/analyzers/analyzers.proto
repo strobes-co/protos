@@ -162,6 +162,7 @@ message Result {
       QUALYS = 2;
       NESSUS = 3;
       NEXPOSE = 4;
+      POSTMAN = 5;
     } 
     Parser parser = 5;
 }
