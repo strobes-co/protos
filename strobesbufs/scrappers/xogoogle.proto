@@ -13,6 +13,7 @@ message XOGoogle {
   string breadcrumb = 7;
   string short_desc = 8;
   string page_data = 9;
+  bool new_article = 10;
 
 }
 
