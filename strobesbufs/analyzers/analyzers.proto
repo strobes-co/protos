@@ -93,7 +93,44 @@ message Cloud {
   string region = 1;
   AWS aws = 2;
 }
- 
+
+message Port {
+    string protocol = 1;
+    string port_id = 2;
+    string service =3;
+    string product = 4;
+    enum State {
+        NOTDEFINED = 0;
+        OPEN = 1;
+        CLOSED =2;
+        FILTERED =3;
+        UNFILTERED =4;
+        OPEN_OR_FILTERED =5;
+        CLOSED_OR_FILTERED = 6;
+    }
+    State state = 5;
+}
+
+message Asset {
+
+    string name = 1;
+    string ipaddress = 2;
+    repeated string os = 3;
+    string mac_address = 4;
+    string hostname = 5;
+    string netbios = 6;
+    repeated string cpe = 7;
+    repeated string tags = 8;
+    string risk_score = 9;
+    Port port = 10;
+    enum State{
+        DOWN = 0;
+        UP = 1;
+    }
+    State state = 11;
+  
+  }
+  
 message Bug {
   string title = 1;
   string description = 2;
@@ -115,27 +152,13 @@ message Bug {
   repeated string tags = 18;
   google.protobuf.Struct extra_info = 19;
   string vulnerable_since = 20;
+  Asset assest = 21;
 }
 
-
-message Asset {
-
-  string name = 1;
-  string ipaddress = 2;
-  string os = 3;
-  string mac_address = 4;
-  string hostname = 5;
-  string netbios = 6;
-  repeated string cpe = 7;
-  repeated string tags = 8;
-  string risk_score = 9;
-
-}
 
 message Result {
     ScanMeta scan_meta = 1;
     repeated Bug bugs_list = 2;
-    repeated Asset assest_list = 3;
     enum Analyzer {
       NOANALYZER = 0;
       SPOTBUGS = 1;
@@ -154,8 +177,9 @@ message Result {
       GOSEC = 14;
       FLAWFINDER = 15;
       DEPENDENCY = 16;
+      NMAP = 17;
     }
-    Analyzer analyzer = 4;
+    Analyzer analyzer = 3;
     enum Parser {
       NOPARSER = 0;
       BURP = 1;
@@ -164,5 +188,5 @@ message Result {
       NEXPOSE = 4;
       POSTMAN = 5;
     } 
-    Parser parser = 5;
+    Parser parser = 4;
 }
