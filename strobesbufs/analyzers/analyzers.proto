@@ -150,14 +150,14 @@ message Bug {
   repeated string tags = 18;
   google.protobuf.Struct extra_info = 19;
   string vulnerable_since = 20;
-  Asset assest = 21;
+  Asset assets = 21;
 }
 
 
 message Result {
     ScanMeta scan_meta = 1;
     repeated Bug bugs_list = 2;
-    repeated Assest assest_list = 3;
+    repeated Asset assets_list = 3;
     enum Analyzer {
       NOANALYZER = 0;
       SPOTBUGS = 1;
