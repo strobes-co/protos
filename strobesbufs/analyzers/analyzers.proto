@@ -17,7 +17,7 @@ message SAST {
   string file_name = 1;
   string vulnerable_code = 2;
   string start_line_no = 3;
-  string end_line_no = 4;    
+  string end_line_no = 4;
 }
 
 message DAST {
@@ -82,7 +82,7 @@ message AWS {
     ACCESS_ANALYZER = 25;
     OTHERS = 26;
   }
-  
+
   string resource_id = 1;
   Type type = 2;
   string category = 3;
@@ -126,15 +126,15 @@ message Asset {
         UP = 1;
     }
     State state = 11;
-  
+
   }
-  
+
 message Bug {
   string title = 1;
   string description = 2;
   int32 severity = 3;
   float CVSS = 4;
-  string step_to_reproduce = 5; 
+  string step_to_reproduce = 5;
   string mitigation = 6;
   repeated string CVE = 7;
   repeated string CWE = 8;
@@ -146,11 +146,10 @@ message Bug {
   Package package = 14;
   Container container = 15;
   map<string, string> scan_details = 16;
-  map<string, string> assets = 17;
-  repeated string tags = 18;
-  google.protobuf.Struct extra_info = 19;
-  string vulnerable_since = 20;
-  Asset assets = 21;
+  repeated string tags = 17;
+  google.protobuf.Struct extra_info = 18;
+  string vulnerable_since = 19;
+  Asset assets = 20;
 }
 
 
@@ -186,6 +185,6 @@ message Result {
       NESSUS = 3;
       NEXPOSE = 4;
       POSTMAN = 5;
-    } 
+    }
     Parser parser = 5;
 }
