@@ -22,19 +22,18 @@ message SAST {
 
 message DAST {
   repeated string uri = 1;
-  int32 port = 2;
+  Port port = 2;
   string method = 3;
   string param = 4;
   string evidence = 5;
   string request_headers = 6;
   string response_headers = 7;
-
 }
 
 
 message Network {
   string ipaddress = 1;
-  string port = 2;
+  Port port = 2;
   string hostname = 3;
   string macaddress = 4;
   string cpe = 5;
@@ -112,7 +111,6 @@ message Port {
 }
 
 message Asset {
-
     string name = 1;
     string ipaddress = 2;
     repeated string os = 3;
@@ -122,7 +120,7 @@ message Asset {
     repeated string cpe = 7;
     repeated string tags = 8;
     string risk_score = 9;
-    Port port = 10;
+    repeated Port port = 10;
     enum State{
         DOWN = 0;
         UP = 1;
@@ -159,6 +157,7 @@ message Bug {
 message Result {
     ScanMeta scan_meta = 1;
     repeated Bug bugs_list = 2;
+    repeated Assest assest_list = 3;
     enum Analyzer {
       NOANALYZER = 0;
       SPOTBUGS = 1;
@@ -179,7 +178,7 @@ message Result {
       DEPENDENCY = 16;
       NMAP = 17;
     }
-    Analyzer analyzer = 3;
+    Analyzer analyzer = 4;
     enum Parser {
       NOPARSER = 0;
       BURP = 1;
@@ -188,5 +187,5 @@ message Result {
       NEXPOSE = 4;
       POSTMAN = 5;
     } 
-    Parser parser = 4;
+    Parser parser = 5;
 }
