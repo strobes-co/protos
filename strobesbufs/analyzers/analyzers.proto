@@ -149,7 +149,7 @@ message Bug {
   repeated string tags = 17;
   google.protobuf.Struct extra_info = 18;
   string vulnerable_since = 19;
-  Asset assets = 20;
+  Asset asset = 20;
 }
 
 
