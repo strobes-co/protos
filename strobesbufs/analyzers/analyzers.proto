@@ -120,7 +120,7 @@ message Asset {
     repeated string cpe = 7;
     repeated string tags = 8;
     string risk_score = 9;
-    repeated Port port = 10;
+    repeated Port ports = 10;
     enum State{
         DOWN = 0;
         UP = 1;
