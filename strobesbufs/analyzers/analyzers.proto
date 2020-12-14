@@ -185,6 +185,7 @@ message Result {
       NESSUS = 3;
       NEXPOSE = 4;
       POSTMAN = 5;
+      NMAP_P =6;
     }
     Parser parser = 5;
 }
