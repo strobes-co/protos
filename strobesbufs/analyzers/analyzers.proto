@@ -180,12 +180,12 @@ message Result {
     Analyzer analyzer = 4;
     enum Parser {
       NOPARSER = 0;
-      BURP = 1;
-      QUALYS = 2;
-      NESSUS = 3;
-      NEXPOSE = 4;
-      POSTMAN = 5;
-      NMAP_P =6;
+      BURP_XML_PARSER = 1;
+      QUALYS_XML_PARSER = 2;
+      NESSUS_XML_PARSER = 3;
+      NEXPOSE_XML_PARSER = 4;
+      POSTMAN_XML_PARSER = 5;
+      NMAP_XML_PARSER =6;
     }
     Parser parser = 5;
 }
