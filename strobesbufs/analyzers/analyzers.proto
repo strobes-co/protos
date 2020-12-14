@@ -184,7 +184,7 @@ message Result {
       QUALYS_XML_PARSER = 2;
       NESSUS_XML_PARSER = 3;
       NEXPOSE_XML_PARSER = 4;
-      POSTMAN_XML_PARSER = 5;
+      POSTMAN_CONVERTER = 5;
       NMAP_XML_PARSER =6;
     }
     Parser parser = 5;
