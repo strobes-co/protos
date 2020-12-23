@@ -176,6 +176,7 @@ message Result {
       FLAWFINDER = 15;
       DEPENDENCY = 16;
       NMAP = 17;
+      SONARQUBE = 18;
     }
     Analyzer analyzer = 4;
     enum Parser {
