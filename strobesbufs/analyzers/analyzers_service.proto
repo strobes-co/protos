@@ -18,29 +18,34 @@ message RunTaskRequest {
 
 message RunTaskResponse {
     string id = 1;
-    string error = 2;
-    string message = 3;
+    string arn = 2;
+    string error = 3;
+    string message = 4;
 }
 
 message TaskStatusRequest {
     string id = 1;
+    string arn = 2;
 }
 
 message TaskStatusResponse {
     string id = 1;
-    string error = 2;
-    string status = 3;
+    string arn = 2;
+    string error = 3;
+    string status = 4;
 }
 
 
 message StopTaskRequest {
     string id = 1;
+    string arn = 2;
 }
 
 message StopTaskResponse {
     string id = 1;
-    string error = 2;
-    string status = 3;
+    string arn = 2;
+    string error = 3;
+    string status = 4;
 }
 
 message GetResultsRequest {
