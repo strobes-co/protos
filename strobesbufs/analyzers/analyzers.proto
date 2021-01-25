@@ -177,7 +177,7 @@ message Result {
       DEPENDENCY = 16;
       NMAP = 17;
       SONARQUBE = 18;
-      BRUPSUITE = 19;
+      BURPSUITE = 19;
     }
     Analyzer analyzer = 4;
     enum Parser {
