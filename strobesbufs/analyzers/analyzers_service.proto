@@ -29,8 +29,8 @@ message TaskStatusRequest {
 
 message TaskStatusResponse {
     string id = 1;
-    string error = 3;
-    string status = 4;
+    string error = 2;
+    string status = 3;
 }
 
 
@@ -40,8 +40,8 @@ message StopTaskRequest {
 
 message StopTaskResponse {
     string id = 1;
-    string error = 3;
-    string status = 4;
+    string error = 2;
+    string status = 3;
 }
 
 message GetResultsRequest {
