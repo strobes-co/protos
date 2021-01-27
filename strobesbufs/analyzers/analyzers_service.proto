@@ -25,12 +25,10 @@ message RunTaskResponse {
 
 message TaskStatusRequest {
     string id = 1;
-    string arn = 2;
 }
 
 message TaskStatusResponse {
     string id = 1;
-    string arn = 2;
     string error = 3;
     string status = 4;
 }
@@ -38,12 +36,10 @@ message TaskStatusResponse {
 
 message StopTaskRequest {
     string id = 1;
-    string arn = 2;
 }
 
 message StopTaskResponse {
     string id = 1;
-    string arn = 2;
     string error = 3;
     string status = 4;
 }
