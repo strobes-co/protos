@@ -62,6 +62,7 @@ message TaskLogsResponse {
     string id = 1;
     string error = 2;
     string logs = 3;
+    string next_token = 4;
 }
 
 
