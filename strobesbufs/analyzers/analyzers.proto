@@ -190,4 +190,5 @@ message Result {
       NMAP_XML_PARSER =6;
     }
     Parser parser = 5;
+    bool success = 6;
 }
