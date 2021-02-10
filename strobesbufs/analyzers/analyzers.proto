@@ -178,6 +178,8 @@ message Result {
       NMAP = 17;
       SONARQUBE = 18;
       BURPSUITE = 19;
+      NESSUS = 20;
+      NEXPOSE = 21;
     }
     Analyzer analyzer = 4;
     enum Parser {
