@@ -193,4 +193,5 @@ message Result {
     }
     Parser parser = 5;
     bool success = 6;
+    string hash = 7;
 }
