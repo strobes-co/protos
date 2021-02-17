@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package strobesbufs.scrappers.redhat;
+
+
+message Redhat {
+  string source = 1;
+  string cve = 2;
+  int32 severity = 3;
+  string published_date = 4;
+  repeated string advisories = 5;
+  string bugzilla = 6;
+  string bugzilla_description = 7;
+  float cvss = 8;
+  string cvss_vector = 9;
+  string cwe = 10;
+  repeated string affected_packages = 11;
+  repeated string references = 12;
+  string cvss3 = 13;
+  string cvss3_vector = 14;
+}
+
+message RedhatList{
+  repeated Redhat redhat = 1;
+}

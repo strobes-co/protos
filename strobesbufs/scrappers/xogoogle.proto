@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package strobesbufs.scrappers.xogoogle;
+
+
+message XOGoogle {
+  string source = 1;
+  string cve = 2;
+  float page = 3;
+  string published_date = 4;
+  string title = 5;
+  string link = 6;
+  string breadcrumb = 7;
+  string short_desc = 8;
+  string page_data = 9;
+  bool new_article = 10;
+
+}
+
+message Result{
+  repeated XOGoogle xogoogle = 1;
+}
+

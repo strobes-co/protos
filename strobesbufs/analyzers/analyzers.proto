@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package strobesbufs.analyzer;
+package strobesbufs.analyzers.analyzer;
 
 import "google/protobuf/struct.proto";
 
@@ -17,20 +17,23 @@ message SAST {
   string file_name = 1;
   string vulnerable_code = 2;
   string start_line_no = 3;
-  string end_line_no = 4;    
+  string end_line_no = 4;
 }
 
 message DAST {
   repeated string uri = 1;
-  int32 port = 2;
+  Port port = 2;
   string method = 3;
   string param = 4;
   string evidence = 5;
+  string request_headers = 6;
+  string response_headers = 7;
 }
+
 
 message Network {
   string ipaddress = 1;
-  string port = 2;
+  Port port = 2;
   string hostname = 3;
   string macaddress = 4;
   string cpe = 5;
@@ -46,7 +49,7 @@ message Container {
   string package_name = 1;
   string fixed_version = 2;
   string installed_version = 3;
-  string cpe = 4;
+  repeated string cpe = 4;
 }
 
 message AWS {
@@ -79,7 +82,7 @@ message AWS {
     ACCESS_ANALYZER = 25;
     OTHERS = 26;
   }
-  
+
   string resource_id = 1;
   Type type = 2;
   string category = 3;
@@ -89,6 +92,42 @@ message Cloud {
   string region = 1;
   AWS aws = 2;
 }
+
+message Port {
+    string protocol = 1;
+    string port_id = 2;
+    string service =3;
+    string product = 4;
+    enum State {
+        NOTDEFINED = 0;
+        OPEN = 1;
+        CLOSED =2;
+        FILTERED =3;
+        UNFILTERED =4;
+        OPEN_OR_FILTERED =5;
+        CLOSED_OR_FILTERED = 6;
+    }
+    State state = 5;
+}
+
+message Asset {
+    string name = 1;
+    string ipaddress = 2;
+    repeated string os = 3;
+    string mac_address = 4;
+    string hostname = 5;
+    string netbios = 6;
+    repeated string cpe = 7;
+    repeated string tags = 8;
+    string risk_score = 9;
+    repeated Port ports = 10;
+    enum State{
+        DOWN = 0;
+        UP = 1;
+    }
+    State state = 11;
+
+  }
 
 message Bug {
   string title = 1;
@@ -107,31 +146,51 @@ message Bug {
   Package package = 14;
   Container container = 15;
   map<string, string> scan_details = 16;
-  map<string, string> assets = 17;
-  repeated string tags = 18;
-  google.protobuf.Struct extra_info = 19;
+  repeated string tags = 17;
+  google.protobuf.Struct extra_info = 18;
+  string vulnerable_since = 19;
+  Asset asset = 20;
 }
+
 
 message Result {
     ScanMeta scan_meta = 1;
     repeated Bug bugs_list = 2;
+    repeated Asset assets_list = 3;
     enum Analyzer {
-      SPOTBUGS = 0;
-      PROWLER = 1;
-      ZAP = 2;
-      TRIVY = 3;
-      ANCHORE = 4;
-      BANDIT = 5;
-      BRAKEMAN = 6;
-      NODEJSCAN = 7;
-      PHPCS = 8;
-      ESLINT = 9;
-      SCODESCAN = 10;
-      GITLEAKS = 11;
-      CLOUDMAPPER = 12;
-      GOSEC = 13;
-      FLAWFINDER = 14;
-      DEPENDENCY = 15;
+      NOANALYZER = 0;
+      SPOTBUGS = 1;
+      PROWLER = 2;
+      ZAP = 3;
+      TRIVY = 4;
+      ANCHORE = 5;
+      BANDIT = 6;
+      BRAKEMAN = 7;
+      NODEJSCAN = 8;
+      PHPCS = 9;
+      ESLINT = 10;
+      SCODESCAN = 11;
+      GITLEAKS = 12;
+      CLOUDMAPPER = 13;
+      GOSEC = 14;
+      FLAWFINDER = 15;
+      DEPENDENCY = 16;
+      NMAP = 17;
+      SONARQUBE = 18;
+      BURPSUITE = 19;
+      NESSUS = 20;
+      NEXPOSE = 21;
     }
     Analyzer analyzer = 4;
+    enum Parser {
+      NOPARSER = 0;
+      BURP_XML_PARSER = 1;
+      QUALYS_XML_PARSER = 2;
+      NESSUS_XML_PARSER = 3;
+      NEXPOSE_XML_PARSER = 4;
+      POSTMAN_CONVERTER = 5;
+      NMAP_XML_PARSER =6;
+    }
+    Parser parser = 5;
+    bool success = 6;
 }

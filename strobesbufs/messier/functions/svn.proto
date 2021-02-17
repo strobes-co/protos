@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package strobesbufs.messier.function;
+
+message Svn {
+    string url = 1;
+    string username = 2;
+    string password = 3;
+}

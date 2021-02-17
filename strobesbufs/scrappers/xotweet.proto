@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package strobesbufs.scrappers.xotweet;
+
+
+message XOTweet {
+  string source = 1;
+  string user_id = 2;
+  string twitter_id =3;
+  string cve = 4;
+  string geo = 5;
+  float retweet_count = 6;
+  float favorite_count = 7;
+  string published_date = 8;
+  string link = 9;
+  string description = 10;
+
+}
+
+message Result{
+  repeated XOTweet xotweet = 1;
+}
+
+
+

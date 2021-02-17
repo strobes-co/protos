@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package strobesbufs.messier.function;
+
+message Slack {
+    string webhook_url = 1;
+    string message = 2;
+}

@@ -1,16 +1,19 @@
 syntax = "proto3";
 
-package strobesbufs.analyzer_service;
+package strobesbufs.analyzers.analyzer_service;
 
 import "analyzers.proto";
 
 
 message RunTaskRequest {
    string analyzer = 1;
-   string vcs = 2;
-   map<string, string> vcs_data = 3;
-   map<string, string> scan_data = 4;
-   map<string, string> env_data = 5;
+   string parser = 2;
+   string vcs = 3;
+   map<string, string> vcs_data = 4;
+   map<string, string> scan_data = 5;
+   map<string, string> env_data = 6;
+   string filename = 7;
+
 }
 
 message RunTaskResponse {
@@ -45,7 +48,21 @@ message GetResultsRequest {
 }
 
 message GetResultsResponse {
-    strobesbufs.analyzer.Result results = 1;
+    strobesbufs.analyzers.analyzer.Result results = 1;
+}
+
+message TaskLogsRequest {
+    string id = 1;
+    string next_token = 2;
+    int32 start = 3;
+    int32 limit = 4;
+}
+
+message TaskLogsResponse {
+    string id = 1;
+    string error = 2;
+    string logs = 3;
+    string next_token = 4;
 }
 
 
@@ -53,5 +70,6 @@ service RunnerService {
     rpc RunTask (RunTaskRequest) returns (RunTaskResponse) {}
     rpc TaskStatus (TaskStatusRequest) returns (TaskStatusResponse) {}
     rpc StopTask (StopTaskRequest) returns (StopTaskResponse) {}
+    rpc TaskLogs (TaskLogsRequest) returns (TaskLogsResponse) {}
     rpc GetResults (GetResultsRequest) returns (GetResultsResponse) {}
 }

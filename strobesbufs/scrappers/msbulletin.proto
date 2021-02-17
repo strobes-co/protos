@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package strobesbufs.scrappers.msbulletin;
+
+
+message Product {
+  string id = 1;
+  string name = 2;
+}
+
+
+message Msbulletin {
+  string source = 1;
+  string cve = 2;
+  string title = 3;
+  string description = 4;
+  string impact = 5;
+  repeated Product impacted_products = 6;
+  int32 severity = 7;
+  string published_date = 8;
+  string last_modified = 9;
+  repeated string references = 10;
+}
+
+message Result {
+  repeated Msbulletin msbulletin = 1;
+}

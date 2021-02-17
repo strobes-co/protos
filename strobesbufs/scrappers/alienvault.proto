@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package strobesbufs.scrappers.alienvault;
+
+message Alienvault {
+  string source = 1;
+  string cve = 2;
+  string description = 3;
+  string cvss2_vector = 4;
+  float cvss2_exploit_score = 5;
+  float cvss2 = 6;
+  string cvss3_vector = 7;
+  float cvss3_exploit_score = 8;
+  float cvss3 = 9;
+  repeated string products = 10;
+  bool seen_wild = 11;
+  string cwe = 12;
+  string last_modified = 13;
+  string published_date = 14;
+  repeated string references = 15;
+  repeated string tags = 16;
+  float priority_private = 17;
+  float priority_public = 18;
+  bool exploit = 19;
+  bool malware = 20;
+  bool patch = 21;
+}
+
+
+message Result {
+    repeated Alienvault alienvault = 1;
+}

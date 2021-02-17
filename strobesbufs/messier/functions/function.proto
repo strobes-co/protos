@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package strobesbufs.messier.function;
+
+import "strobesbufs/messier/functions/slack.proto";
+import "strobesbufs/messier/functions/git.proto";
+import "strobesbufs/messier/functions/svn.proto";
+import "strobesbufs/messier/functions/docker.proto";
+
+message Function {
+    oneof function {
+        strobesbufs.messier.function.Slack Slack = 1;
+        strobesbufs.messier.function.Git Git = 2;
+        strobesbufs.messier.function.Svn Svn = 3;
+        strobesbufs.messier.function.Docker Docker = 4;
+    }
+}

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package strobesbufs.messier.analyzer;
+
+import "strobesbufs/messier/analyzers/bandit.proto";
+import "strobesbufs/messier/analyzers/subfinder.proto";
+import "strobesbufs/messier/analyzers/naabu.proto";
+import "strobesbufs/messier/analyzers/wappalyzer.proto";
+
+
+message Analyzer {
+    oneof analyzer {
+        strobesbufs.messier.analyzer.Bandit Bandit = 1;
+        strobesbufs.messier.analyzer.Subfinder Subfinder = 2;
+        strobesbufs.messier.analyzer.Naabu Naabu = 3;
+        strobesbufs.messier.analyzer.Wappalyzer Wappalyzer = 4;
+    }
+}

@@ -1,11 +1,12 @@
 venv/*
-dist/*
-build/*
+*dist/*
+*build/*
 *.egg-info
 *.env
 .idea/*
 *.pyc
-__pycache__
+*__pycache__/*
 .DS_Store
 data/*
 certs/*
+*.mypy_cache/*

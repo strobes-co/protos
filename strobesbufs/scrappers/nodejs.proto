@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package strobesbufs.scrappers.nodejs;
+
+message Nodejs {
+  string source = 1;
+  string cve = 2;
+  repeated string references = 3;
+  repeated string vulnerable = 4;
+  repeated string patched = 5;
+  string description = 6;
+  string overview = 7;
+  string published_date = 8;
+  string title = 9;
+  string recommendation = 10;
+  float cvss = 11;
+  string cvss_vector = 12;
+}
+
+
+message Result {
+    repeated Nodejs nodejs = 1;
+}

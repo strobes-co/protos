@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package strobesbufs.scrappers.oval_ubuntu;
+
+
+message Ubuntu {
+  string source = 1;
+  string cve = 2;
+  string title = 3;
+  string description = 4;
+  string family = 5;
+  string affected_platform = 6;
+  string published_date = 7;
+  repeated string references = 8;
+}
+
+message Result {
+    repeated Ubuntu ubuntu = 1;
+}
