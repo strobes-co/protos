@@ -2,9 +2,6 @@ syntax = "proto3";
 
 package strobesbufs.scrappers.packet_storm;
 
-import "google/protobuf/struct.proto";
-
-
 
 message PacketStorm {
   string source = 1;
