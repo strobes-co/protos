@@ -183,6 +183,7 @@ message Result {
       BURPSUITE = 19;
       NESSUS = 20;
       NEXPOSE = 21;
+      SUBFINDER =22;
     }
     Analyzer analyzer = 4;
     enum Parser {
