@@ -184,7 +184,7 @@ message Result {
       NESSUS = 20;
       NEXPOSE = 21;
       SUBFINDER =22;
-      TERRAFORM = 23;
+      CHECKOV = 23;
     }
     Analyzer analyzer = 4;
     enum Parser {
