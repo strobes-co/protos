@@ -185,6 +185,7 @@ message Result {
       NEXPOSE = 21;
       SUBFINDER =22;
       CHECKOV = 23;
+      CLOUDSPLOIT =24;
     }
     Analyzer analyzer = 4;
     enum Parser {
