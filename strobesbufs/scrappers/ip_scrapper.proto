@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package strobesbufs.scrappers.ip_scrapper;
+
+
+message IpScrapper {
+    string source = 1;
+    string ip = 2;
+    string type = 3;
+    string threat_type = 4;
+    string first_seen = 5;
+    string last_online = 6;
+    string status = 7;
+    string port = 8;
+    string malware = 9;
+  }
+  
+  
+  message Result {
+    repeated IpScrapper ip_scrapper = 1;
+  }

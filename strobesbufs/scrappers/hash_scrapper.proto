@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package strobesbufs.scrappers.hash_scrapper;
+
+
+message HashScrapper {
+    string source = 1;
+    string hash = 2;
+    string type = 3;
+    string threat_type = 4;
+}
+  
+  
+message Result {
+    repeated HashScrapper hash_scrapper = 1;
+}

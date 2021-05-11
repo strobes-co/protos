@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package strobesbufs.scrappers.domain_scrapper;
+
+
+message DomainScrapper {
+    string source = 1;
+    string domain = 2;
+    string type = 3;
+    string threat_type = 4;
+    repeated string tags = 5;
+}
+  
+  
+message Result {
+    repeated DomainScrapper domain_scrapper = 1;
+}
