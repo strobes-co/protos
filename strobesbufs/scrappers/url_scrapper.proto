@@ -14,7 +14,7 @@ message UrlScrapper {
     strobesbufs.scrappers.common.Status status = 6;
     string first_seen = 7;
     string last_seen = 8;
-    string published_date = 9
+    string published_date = 9;
 }
   
   

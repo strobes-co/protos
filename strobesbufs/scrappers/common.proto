@@ -15,7 +15,7 @@ enum Type {
 
 
 enum Status {
-    UNKNOWN = 0;
+    INVALID = 0;
     OFFLINE = 1;
     ONLINE = 2;
 }
