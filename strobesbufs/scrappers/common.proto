@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package strobesbufs.scrappers.common;
+
+
+enum Type {
+    UNKNOWN = 0;
+    IP = 1;
+    URL = 2;
+    HASH = 3;
+    DOMAIN = 4;
+    THREAT_GROUP = 5;
+    CVE = 6;
+}
+
+
+enum Status {
+    UNKNOWN = 0;
+    OFFLINE = 1;
+    ONLINE = 2;
+}

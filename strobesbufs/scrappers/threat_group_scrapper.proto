@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package strobesbufs.scrappers.threat_group_scrapper;
+
+import "strobesbufs/scrappers/common.proto";
+
+
+message ThreatGroupScrapper {
+    string source = 1;
+    string threat_group = 2;
+    strobesbufs.scrappers.common.Type type = 3;
+    string target = 4;
+    string description = 5;
+    string confidence = 6;
+    string country = 7;
+    repeated string references = 8;
+    repeated string alias = 9;
+    repeated string operations = 10;
+    string tool_malware_used = 11;
+    string mode_of_operating = 12;
+    string comments = 13;
+    string overlaps_to = 14;
+}
+  
+  
+message Result {
+    repeated ThreatGroupScrapper threat_group_scrapper = 1;
+}

@@ -2,12 +2,14 @@ syntax = "proto3";
 
 package strobesbufs.scrappers.hash_scrapper;
 
+import "strobesbufs/scrappers/common.proto";
+
 
 message HashScrapper {
     string source = 1;
     string hash = 2;
-    string type = 3;
-    string threat_type = 4;
+    strobesbufs.scrappers.common.Type type = 3;
+    string threat = 4;
 }
   
   

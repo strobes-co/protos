@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package strobesbufs.scrappers.url_scrapper;
+
+import "strobesbufs/scrappers/common.proto";
+
+
+message UrlScrapper {
+    string source = 1;
+    string url = 2;
+    strobesbufs.scrappers.common.Type type = 3;
+    string threat = 4;
+    repeated string tags = 5;
+    strobesbufs.scrappers.common.Status status = 6;
+    string first_seen = 7;
+    string last_seen = 8;
+    string published_date = 9
+}
+  
+  
+message Result {
+    repeated UrlScrapper url_scrapper = 1;
+}
