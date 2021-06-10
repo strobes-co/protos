@@ -186,6 +186,7 @@ message Result {
       SUBFINDER = 22;
       CHECKOV = 23;
       CLOUDSPLOIT = 24;
+      NUCLEI =25;
     }
     Analyzer analyzer = 4;
     enum Parser {
